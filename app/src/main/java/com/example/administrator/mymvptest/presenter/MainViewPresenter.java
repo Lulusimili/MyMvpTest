@@ -18,7 +18,7 @@ public class MainViewPresenter {
     /*public void showResponse(){
         mIMainView.showText(mMainViewModel.getResponse());
     }*/
-    public String showResponse() {
-      return   mMainViewModel.getResponse();
+    public void showResponse() {
+        mIMainView.runOnUi(mMainViewModel.getResponse());
     }
 }

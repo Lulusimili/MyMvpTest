@@ -5,5 +5,5 @@ package com.example.administrator.mymvptest.View;
  */
 
 public interface IMainView {
-     void  showText();
+     void runOnUi(String text);
 }

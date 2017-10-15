@@ -1,6 +1,7 @@
 package com.example.administrator.mymvptest.model;
 
-import com.example.administrator.mymvptest.Util.OkHttpUtil;
+
+import com.example.administrator.mymvptest.HttpUtil.OkHttpUtil;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -21,7 +22,7 @@ public class MainViewModel implements IMainViewModel {
                 try {
                     OkHttpClient client=new OkHttpClient();
                     Request request=new Request.Builder()
-                            .url("https://m.baidu.com/?from=1001703y")
+                            .url("https://www.baidu.com")
                             .build();
                     Response response=client.newCall(request).execute();
                     String responceData=response.body().string();

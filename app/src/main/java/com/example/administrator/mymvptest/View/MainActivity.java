@@ -6,10 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.administrator.mymvptest.R;
-import com.example.administrator.mymvptest.Util.OkHttpUtil;
 import com.example.administrator.mymvptest.presenter.MainViewPresenter;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,IMainView {
@@ -28,17 +25,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
          if(view.getId()==R.id.send_request){
-             showText();
-             Toast.makeText(this,"hhh",Toast.LENGTH_SHORT).show();
+             mpresenter.showResponse();
+             //Toast.makeText(this,"调用成功！",Toast.LENGTH_SHORT).show();
          }
     }
 
     @Override
-    public void showText() {
+    public void runOnUi(final String text) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-               request_text.setText( mpresenter.showResponse());
+               request_text.setText(text);
             }
         });
     }
